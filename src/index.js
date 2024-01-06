@@ -10,7 +10,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 // const root = ReactDOM.createRoot(document.getElementById('root'));
-const history = History.createBrowserHistory;
+const history = History.createBrowserHistory();
 export const store = createStore(history); //作ったstoreを実行
 
 //propsにstoreを渡すと、ラップしたコンポーネントにstoreも情報を渡す
