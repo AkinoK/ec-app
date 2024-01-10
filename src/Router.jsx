@@ -1,6 +1,6 @@
 import React from 'react';
 import {Route, Switch} from 'react-router';
-import {Login, Home, SignUp} from './templates';
+import {SignIn, Home, SignUp} from './templates';
 
 const Router = () => {
     return (
@@ -8,7 +8,7 @@ const Router = () => {
          // /がなくてもホームを表示
         <Switch>
             <Route exact path ={"/signup" } component = {SignUp} />
-            <Route exact path ={"/login" } component = {Login} />
+            <Route exact path ={"/SignIn" } component = {SignIn} />
             <Route exact path ={"/(/)?"}  component = {Home} />
            
         </Switch>
