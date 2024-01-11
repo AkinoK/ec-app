@@ -8,6 +8,43 @@ import {hideLoadingAction, showLoadingAction} from "../loading/actions";
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 // ... other imports
 
+export const listenAuthState = () => {
+    return async (dispatch) => {
+        return auth.onAuthStateChanged(async user => {
+            try {
+                if (!user) {
+                    throw new Error('ユーザーIDを取得できません');
+                }
+                const userId = user.uid;
+
+                const userDocRef = doc(db, "users", userId);
+                const docSnap = await getDoc(userDocRef);
+
+                if (!docSnap.exists()) {
+                    throw new Error('ユーザーデータが存在しません');
+                }
+
+                const data = docSnap.data();
+                dispatch(signInAction({
+                    customer_id: data.customer_id ?? "",
+                    email: data.email,
+                    isSignedIn: true,
+                    role: data.role,
+                    payment_method_id: data.payment_method_id ?? "",
+                    uid: userId,
+                    username: data.username,
+                }));
+
+                dispatch(push('/'));
+            } catch (error) {
+                alert(error.message);
+            } finally {
+                dispatch(hideLoadingAction());
+            }
+        })
+    }    
+};
+
 
 export const signIn = (email, password) => {
     return async (dispatch) => {
