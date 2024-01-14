@@ -36,7 +36,7 @@ export const listenAuthState = () => {
                     username: data.username,
                 }));
 
-                dispatch(push('/'));
+                // dispatch(push('/'));
             } catch (error) {
                 alert(error.message);
             } finally {

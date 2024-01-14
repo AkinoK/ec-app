@@ -4,14 +4,14 @@ import { connectRouter, routerMiddleware} from "connected-react-router";
 import { thunk } from 'redux-thunk';
 
 // Import reducers
-// import { ProductsReducer } from '../products/reducers';
+import { ProductsReducer } from '../products/reducers';
 import { UsersReducer } from '../users/reducers';
 
 export default function createStore(history) { // history: reactアプリ内で前回どのパスにいたのか・・
     return configureStore({
         reducer:{
 
-            // products: ProductsReducer,
+            products: ProductsReducer,
             router: connectRouter(history),//reactのstore内で、history情報を管理
             users: UsersReducer, // Assuming "useres" was a typo and "users" is correct.
         },
