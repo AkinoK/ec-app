@@ -2,6 +2,8 @@ import React, {useCallback, useState} from 'react';
 import {TextInput, PrimaryButton} from "../components/UIkit";
 import {signUp} from '../reducks/users/operations';
 import { useDispatch } from 'react-redux';
+import {push} from "connected-react-router"
+
 
 const SignUp = () => {
     const dispatch = useDispatch();
@@ -51,6 +53,8 @@ const SignUp = () => {
                     label = {"Create Account"}
                     onClick={() => dispatch(signUp(username, email, password, confirmPassword))}
                 />
+                <p className="u-text-small" onClick={() => dispatch(push('/signin'))}>You already have an account?</p>
+
 
             </div>
 

@@ -1,9 +1,9 @@
-import { signInAction } from "./actions";
+import { signInAction, signOutAction } from "./actions";
 import { push } from 'connected-react-router';
 import {db, auth, FirebaseTimestamp, createUserWithEmailAndPassword} from '../../firebase/index';
 import {isValidEmailFormat, isValidRequiredInput} from "../../function/common";
 import { Timestamp } from "firebase/firestore";
-import { doc, setDoc, getDoc, getFirestore } from "firebase/firestore";
+import { getFirestore, collection, query, getDocs, getDoc, doc, deleteDoc, setDoc, writeBatch } from 'firebase/firestore';
 import {hideLoadingAction, showLoadingAction} from "../loading/actions";
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 // ... other imports
@@ -13,7 +13,8 @@ export const listenAuthState = () => {
         return auth.onAuthStateChanged(async user => {
             try {
                 if (!user) {
-                    throw new Error('ユーザーIDを取得できません');
+                    // throw new Error('ユーザーIDを取得できません');
+                    dispatch(push('/signin'));
                 }
                 const userId = user.uid;
 
@@ -144,6 +145,55 @@ export const signUp = (username, email, password, confirmPassword) => {
         } catch (error) {
             // Handle errors here
             alert(error.message);
+        }
+    }
+}
+
+export const signOut = () => {
+    return async (dispatch, getState) => {
+        dispatch(showLoadingAction("Sign out..."));
+        const uid = getState().users.uid;
+        const db = getFirestore();
+
+        // Attempt to delete products from the user's cart
+        try {
+            const cartRef = collection(db, 'users', uid, 'cart');
+            const cartQuerySnapshot = await getDocs(cartRef);
+
+            // Create a batch to delete all documents at once
+            const batch = writeBatch(db);
+            cartQuerySnapshot.docs.forEach((docSnapshot) => {
+                batch.delete(docSnapshot.ref);
+            });
+            await batch.commit();
+
+            // Proceed with sign out
+            await auth.signOut();
+            dispatch(signOutAction());
+            // dispatch(initProductsAction());
+            dispatch(push('/signin'));
+        } catch (error) {
+            console.error('Sign out failed: ', error);
+            alert('ログアウトに失敗しました。');
+        } finally {
+            dispatch(hideLoadingAction());
+        }
+    };
+};
+
+export const resetPassword = (email) => {
+    return async (dispatch) => {
+        if (!isValidEmailFormat(email)) {
+            alert('Invalid email')
+            return false
+        } else {
+            return auth.sendPasswordResetEmail(email)
+                .then(() => {
+                    alert('Email sent to the input email address')
+                    dispatch(push('/signin'))
+                }).catch(() => {
+                    alert('The email addres is not registered. Please check again.')
+                })
         }
     }
 }

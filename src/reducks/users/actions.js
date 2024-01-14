@@ -11,7 +11,7 @@ export const signInAction = (userState) => {
     }
 }
 
-export const SIGN_OUT = "SIGN_OU";
+export const SIGN_OUT = "SIGN_OUT";
 // 引数は受け取らない。初期の状態に戻すだけだから
 export const signOutAction = () => {
     return {
