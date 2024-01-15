@@ -5,7 +5,7 @@ import {useDispatch} from "react-redux";
 import { getFirestore, doc, getDoc, collection, query, orderBy, getDocs } from 'firebase/firestore';
 
 import {saveProduct} from "../reducks/products/operations";
-// import {ImageArea} from "../components/Products";
+import ImageArea from "../components/Products/ImageArea";
 
 const ProductEdit = () => {
     const dispatch = useDispatch();
@@ -74,7 +74,7 @@ const ProductEdit = () => {
         <section>
             <h2 className="u-text__headline u-text-center">Add and Edit A Product</h2>
             <div className="c-section-container">
-                {/* <ImageArea images={images} setImages={setImages} /> */}
+                <ImageArea images={images} setImages={setImages} />
                 <TextInput
                     fullWidth={true} label={"Product name"} multiline={false} required={true}
                     onChange={inputName} rows={1} value={name} type={"text"}
