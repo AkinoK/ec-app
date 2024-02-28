@@ -1,0 +1,144 @@
+[debug] [2024-02-28T07:04:25.638Z] ----------------------------------------------------------------------
+[debug] [2024-02-28T07:04:25.640Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\akino\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2024-02-28T07:04:25.641Z] CLI Version:   12.9.1
+[debug] [2024-02-28T07:04:25.641Z] Platform:      win32
+[debug] [2024-02-28T07:04:25.641Z] Node Version:  v20.11.0
+[debug] [2024-02-28T07:04:25.641Z] Time:          Wed Feb 28 2024 02:04:25 GMT-0500 (Eastern Standard Time)
+[debug] [2024-02-28T07:04:25.641Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-02-28T07:04:25.647Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-02-28T07:04:25.648Z] > authorizing via signed-in user (akino.kashima@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\akino\OneDrive\Portfolio Projects\ec-app
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2024-02-28T07:04:41.473Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=100
+[debug] [2024-02-28T07:04:42.091Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2024-02-28T07:04:42.091Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[info] i  Using project ec-app-a7b7e (ec-app) 
+[info] 
+=== Firestore Setup
+[debug] [2024-02-28T07:04:44.220Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ec-app-a7b7e/services/firestore.googleapis.com [none]
+[debug] [2024-02-28T07:04:44.220Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ec-app-a7b7e/services/firestore.googleapis.com x-goog-quota-user=projects/ec-app-a7b7e
+[debug] [2024-02-28T07:04:44.579Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ec-app-a7b7e/services/firestore.googleapis.com 200
+[debug] [2024-02-28T07:04:44.579Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ec-app-a7b7e/services/firestore.googleapis.com [omitted]
+[debug] [2024-02-28T07:04:44.579Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/ec-app-a7b7e/databases/(default) [none]
+[debug] [2024-02-28T07:04:44.856Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/ec-app-a7b7e/databases/(default) 200
+[debug] [2024-02-28T07:04:44.856Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/ec-app-a7b7e/databases/(default) {"name":"projects/ec-app-a7b7e/databases/(default)","uid":"3dc500c6-6692-4b31-9b37-735835262096","createTime":"2024-02-28T07:03:31.235706Z","updateTime":"2024-02-28T07:03:31.235706Z","locationId":"nam5","type":"FIRESTORE_NATIVE","concurrencyMode":"PESSIMISTIC","versionRetentionPeriod":"3600s","earliestVersionTime":"2024-02-28T07:03:31.235706Z","appEngineIntegrationMode":"DISABLED","keyPrefix":"s","pointInTimeRecoveryEnablement":"POINT_IN_TIME_RECOVERY_DISABLED","deleteProtectionState":"DELETE_PROTECTION_DISABLED","etag":"IKvfg4+8zYQDMPqetuy7zYQD"}
+[debug] [2024-02-28T07:04:44.856Z] database_type: FIRESTORE_NATIVE
+[debug] [2024-02-28T07:04:44.857Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-02-28T07:04:44.857Z] > authorizing via signed-in user (akino.kashima@gmail.com)
+[debug] [2024-02-28T07:04:44.857Z] [iam] checking project ec-app-a7b7e for permissions ["firebase.projects.get"]
+[debug] [2024-02-28T07:04:44.858Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/ec-app-a7b7e:testIamPermissions [none]
+[debug] [2024-02-28T07:04:44.858Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/ec-app-a7b7e:testIamPermissions x-goog-quota-user=projects/ec-app-a7b7e
+[debug] [2024-02-28T07:04:44.858Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/ec-app-a7b7e:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2024-02-28T07:04:45.143Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/ec-app-a7b7e:testIamPermissions 200
+[debug] [2024-02-28T07:04:45.143Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/ec-app-a7b7e:testIamPermissions {"permissions":["firebase.projects.get"]}
+[info] 
+[info] Firestore Security Rules allow you to define how and when to allow
+[info] requests. You can keep these rules in your project directory
+[info] and publish them with firebase deploy.
+[info] 
+[debug] [2024-02-28T07:04:54.830Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/ec-app-a7b7e/releases pageSize=10&pageToken=
+[debug] [2024-02-28T07:04:55.089Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/ec-app-a7b7e/releases 200
+[debug] [2024-02-28T07:04:55.089Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/ec-app-a7b7e/releases {"releases":[{"name":"projects/ec-app-a7b7e/releases/cloud.firestore","rulesetName":"projects/ec-app-a7b7e/rulesets/794232af-1c36-48c7-bef5-31848fabd2b1","createTime":"2024-02-28T07:03:41.866032Z","updateTime":"2024-02-28T07:03:41.866032Z"}]}
+[debug] [2024-02-28T07:04:55.090Z] Found ruleset: projects/ec-app-a7b7e/rulesets/794232af-1c36-48c7-bef5-31848fabd2b1
+[debug] [2024-02-28T07:04:55.090Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/ec-app-a7b7e/rulesets/794232af-1c36-48c7-bef5-31848fabd2b1 [none]
+[debug] [2024-02-28T07:04:55.293Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/ec-app-a7b7e/rulesets/794232af-1c36-48c7-bef5-31848fabd2b1 200
+[debug] [2024-02-28T07:04:55.293Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/ec-app-a7b7e/rulesets/794232af-1c36-48c7-bef5-31848fabd2b1 [omitted]
+[info] 
+[info] Firestore indexes allow you to perform complex queries while
+[info] maintaining performance that scales with the size of the result
+[info] set. You can keep index definitions in your project directory
+[info] and publish them with firebase deploy.
+[info] 
+[debug] [2024-02-28T07:05:07.813Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/ec-app-a7b7e/databases/(default)/collectionGroups/-/indexes [none]
+[debug] [2024-02-28T07:05:07.816Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/ec-app-a7b7e/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* [none]
+[debug] [2024-02-28T07:05:08.097Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/ec-app-a7b7e/databases/(default)/collectionGroups/-/indexes 200
+[debug] [2024-02-28T07:05:08.098Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/ec-app-a7b7e/databases/(default)/collectionGroups/-/indexes {}
+[debug] [2024-02-28T07:05:08.811Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/ec-app-a7b7e/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* 200
+[debug] [2024-02-28T07:05:08.811Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/ec-app-a7b7e/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* {"fields":[{"name":"projects/ec-app-a7b7e/databases/(default)/collectionGroups/__default__/fields/*","indexConfig":{"indexes":[{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","order":"ASCENDING"}],"state":"READY"},{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","order":"DESCENDING"}],"state":"READY"},{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","arrayConfig":"CONTAINS"}],"state":"READY"}]}}]}
+[info] 
+=== Functions Setup
+[debug] [2024-02-28T07:05:08.813Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-02-28T07:05:08.814Z] > authorizing via signed-in user (akino.kashima@gmail.com)
+[debug] [2024-02-28T07:05:08.814Z] [iam] checking project ec-app-a7b7e for permissions ["firebase.projects.get"]
+[debug] [2024-02-28T07:05:08.814Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/ec-app-a7b7e:testIamPermissions [none]
+[debug] [2024-02-28T07:05:08.814Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/ec-app-a7b7e:testIamPermissions x-goog-quota-user=projects/ec-app-a7b7e
+[debug] [2024-02-28T07:05:08.814Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/ec-app-a7b7e:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2024-02-28T07:05:09.113Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/ec-app-a7b7e:testIamPermissions 200
+[debug] [2024-02-28T07:05:09.114Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/ec-app-a7b7e:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2024-02-28T07:05:09.114Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ec-app-a7b7e/services/cloudfunctions.googleapis.com [none]
+[debug] [2024-02-28T07:05:09.114Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ec-app-a7b7e/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/ec-app-a7b7e
+[debug] [2024-02-28T07:05:09.117Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ec-app-a7b7e/services/runtimeconfig.googleapis.com [none]
+[debug] [2024-02-28T07:05:09.117Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ec-app-a7b7e/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/ec-app-a7b7e
+[debug] [2024-02-28T07:05:09.433Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ec-app-a7b7e/services/runtimeconfig.googleapis.com 200
+[debug] [2024-02-28T07:05:09.433Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ec-app-a7b7e/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2024-02-28T07:05:09.433Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ec-app-a7b7e/services/cloudfunctions.googleapis.com 200
+[debug] [2024-02-28T07:05:09.434Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ec-app-a7b7e/services/cloudfunctions.googleapis.com [omitted]
+[debug] [2024-02-28T07:05:09.435Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/ec-app-a7b7e/services/cloudfunctions.googleapis.com:enable [none]
+[debug] [2024-02-28T07:05:09.435Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/ec-app-a7b7e/services/cloudfunctions.googleapis.com:enable x-goog-quota-user=projects/ec-app-a7b7e
+[debug] [2024-02-28T07:05:10.039Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/ec-app-a7b7e/services/cloudfunctions.googleapis.com:enable 200
+[debug] [2024-02-28T07:05:10.039Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/ec-app-a7b7e/services/cloudfunctions.googleapis.com:enable [omitted]
+[debug] [2024-02-28T07:05:20.045Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/ec-app-a7b7e/services/cloudfunctions.googleapis.com [none]
+[debug] [2024-02-28T07:05:20.045Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/ec-app-a7b7e/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/ec-app-a7b7e
+[debug] [2024-02-28T07:05:20.393Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/ec-app-a7b7e/services/cloudfunctions.googleapis.com 200
+[debug] [2024-02-28T07:05:20.394Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/ec-app-a7b7e/services/cloudfunctions.googleapis.com [omitted]
+[info] Let's create a new codebase for your functions.
+[info] A directory corresponding to the codebase will be created in your project
+[info] with sample code pre-configured.
+
+[info] See https://firebase.google.com/docs/functions/organize-functions for
+[info] more information on organizing your functions using codebases.
+
+[info] Functions can be deployed with firebase deploy.
+
+[info] +  Wrote functions/package.json 
+[info] +  Wrote functions/index.js 
+[info] +  Wrote functions/.gitignore 
+[info] 
+=== Hosting Setup
+[debug] [2024-02-28T07:06:01.744Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/ec-app-a7b7e [none]
+[debug] [2024-02-28T07:06:02.164Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/ec-app-a7b7e 200
+[debug] [2024-02-28T07:06:02.164Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/ec-app-a7b7e {"projectId":"ec-app-a7b7e","projectNumber":"232689798964","displayName":"ec-app","name":"projects/ec-app-a7b7e","resources":{"hostingSite":"ec-app-a7b7e","storageBucket":"ec-app-a7b7e.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_6c36af2e-2408-41e6-a1dc-14d2f6b4d8c4"}
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
+[debug] [2024-02-28T07:08:31.947Z] >>> [apiv2][query] GET https://www.gstatic.com/firebasejs/releases.json [none]
+[debug] [2024-02-28T07:08:32.126Z] <<< [apiv2][status] GET https://www.gstatic.com/firebasejs/releases.json 200
+[debug] [2024-02-28T07:08:32.126Z] <<< [apiv2][body] GET https://www.gstatic.com/firebasejs/releases.json {"current":{"version":"10.8.0","browserURL":"https://www.gstatic.com/firebasejs/10.8.0/firebase.js","packageURL":"https://www.gstatic.com/firebasejs/10.8.0/firebase.tgz"},"live":{"version":"10.8","browserURL":"https://www.gstatic.com/firebasejs/live/10.8/firebase.js","packageURL":"https://www.gstatic.com/firebasejs/live/10.8/firebase.tgz"},"components":{"analytics":"https://www.gstatic.com/firebasejs/10.8.0/firebase-analytics.js","app":"https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js","app-check":"https://www.gstatic.com/firebasejs/10.8.0/firebase-app-check.js","auth":"https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js","auth/cordova":"https://www.gstatic.com/firebasejs/10.8.0/firebase-auth/cordova.js","auth/web-extension":"https://www.gstatic.com/firebasejs/10.8.0/firebase-auth/web-extension.js","functions":"https://www.gstatic.com/firebasejs/10.8.0/firebase-functions.js","firestore":"https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js","firestore/lite":"https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore/lite.js","installations":"https://www.gstatic.com/firebasejs/10.8.0/firebase-installations.js","storage":"https://www.gstatic.com/firebasejs/10.8.0/firebase-storage.js","performance":"https://www.gstatic.com/firebasejs/10.8.0/firebase-performance.js","remote-config":"https://www.gstatic.com/firebasejs/10.8.0/firebase-remote-config.js","messaging":"https://www.gstatic.com/firebasejs/10.8.0/firebase-messaging.js","messaging/sw":"https://www.gstatic.com/firebasejs/10.8.0/firebase-messaging/sw.js","database":"https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js","firestore.memory":"https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.memory.js"}}
+[info] +  Wrote build/index.html 
+[info] 
+[info] i  Detected a .git folder at C:\Users\akino\OneDrive\Portfolio Projects\ec-app 
+[info] i  Authorizing with GitHub to upload your service account to a GitHub repository's secrets store. 
+[info] 
+[info] Visit this URL on this device to log in:
+[info] https://github.com/login/oauth/authorize?client_id=89cf50f02ac6aaed3484&state=910395156&redirect_uri=http%3A%2F%2Flocalhost%3A9005&scope=read%3Auser%20repo%20public_repo
+[info] 
+[info] Waiting for authentication...
+[debug] [2024-02-28T07:08:32.654Z] >>> [apiv2][query] POST https://github.com/login/oauth/access_token [none]
+[debug] [2024-02-28T07:08:32.655Z] >>> [apiv2][body] POST https://github.com/login/oauth/access_token [stream]
+[debug] [2024-02-28T07:08:33.000Z] <<< [apiv2][status] POST https://github.com/login/oauth/access_token 200
+[debug] [2024-02-28T07:08:33.001Z] <<< [apiv2][body] POST https://github.com/login/oauth/access_token {"access_token":"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","token_type":"bearer","scope":"read:user,repo"}
+[debug] [2024-02-28T07:08:33.015Z] >>> [apiv2][query] GET https://api.github.com/user [none]
+[debug] [2024-02-28T07:08:33.310Z] <<< [apiv2][status] GET https://api.github.com/user 200
+[debug] [2024-02-28T07:08:33.310Z] <<< [apiv2][body] GET https://api.github.com/user {"login":"AkinoK","id":84216541,"node_id":"MDQ6VXNlcjg0MjE2NTQx","avatar_url":"https://avatars.githubusercontent.com/u/84216541?v=4","gravatar_id":"","url":"https://api.github.com/users/AkinoK","html_url":"https://github.com/AkinoK","followers_url":"https://api.github.com/users/AkinoK/followers","following_url":"https://api.github.com/users/AkinoK/following{/other_user}","gists_url":"https://api.github.com/users/AkinoK/gists{/gist_id}","starred_url":"https://api.github.com/users/AkinoK/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/AkinoK/subscriptions","organizations_url":"https://api.github.com/users/AkinoK/orgs","repos_url":"https://api.github.com/users/AkinoK/repos","events_url":"https://api.github.com/users/AkinoK/events{/privacy}","received_events_url":"https://api.github.com/users/AkinoK/received_events","type":"User","site_admin":false,"name":null,"company":null,"blog":"","location":null,"email":null,"hireable":null,"bio":null,"twitter_username":null,"public_repos":12,"public_gists":0,"followers":1,"following":1,"created_at":"2021-05-15T03:45:04Z","updated_at":"2023-12-21T20:23:54Z","private_gists":0,"total_private_repos":14,"owned_private_repos":14,"disk_usage":378653,"collaborators":2,"two_factor_authentication":false,"plan":{"name":"free","space":976562499,"collaborators":0,"private_repos":10000}}
+[info] 
+[info] +  Success! Logged into GitHub as AkinoK 
+[info] 
